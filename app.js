@@ -1,6 +1,6 @@
 function updateTime() {
     try {
-        const timeTag = new Date();
+        let timeTag = new Date();
         document.querySelector('.time').innerHTML = timeTag.toLocaleTimeString();
 
     } catch (err) {
@@ -8,6 +8,12 @@ function updateTime() {
     }
 
 }
+ 
+ setInterval(updateTime, 1000); 
 
-setTimeout(updateTime, 1000);
+
+/* let timerId = setTimeout(function updateTime() {
+    timerId = setTimeout(updateTime, 2000);
+  }, 2000); */
+  
 
