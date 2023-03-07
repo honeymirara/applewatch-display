@@ -1,19 +1,21 @@
-function updateTime() {
-    try {
-        let timeTag = new Date();
-        document.querySelector('.time').innerHTML = timeTag.toLocaleTimeString();
 
-    } catch (err) {
-        alert(err.message);
+class AppleWatch{
+    constructor(){
+        setInterval(this.updateTime, 1000);
     }
 
+    updateTime() {
+        try {
+            let timeTag = new Date();
+            document.querySelector('.time').innerHTML = timeTag.toLocaleTimeString();
+    
+        } catch (err) {
+            alert(err.message);
+        }
+    
+    }
 }
+
+ const appleWatch = new AppleWatch() ;
  
- setInterval(updateTime, 1000); 
-
-
-/* let timerId = setTimeout(function updateTime() {
-    timerId = setTimeout(updateTime, 2000);
-  }, 2000); */
-  
 
